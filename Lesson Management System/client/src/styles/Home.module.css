@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+/* Home.module.css */
+.background {
+    background-image: url('/images/wallpapersden.com_ufc-3-conor-mcgregor_1920x1080.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 78.7vh; /* Ensure the background covers the entire viewport height */
+    margin: 0;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

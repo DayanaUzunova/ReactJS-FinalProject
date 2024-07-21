@@ -1,0 +1,53 @@
+.navbar {
+    background-color:transparent;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better separation from the content */
+    backdrop-filter: blur(5px) /* Adds a blur effect to the background */
+  }
+  
+  .nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu li {
+    padding: 10px 15px;
+    position: relative; /* Allows for the use of pseudo-elements */
+  }
+  
+  .nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px; /* Sets a consistent font size */
+    transition: all 0.3s ease;
+    position: relative; /* For pseudo-elements */
+  }
+  
+  .nav-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .nav-menu li a:hover::after {
+    width: 100%; /* Expands the pseudo-element on hover */
+  }
+  
+  .nav-menu li a:hover {
+    color: #bebdb8;
+  }
+  
