@@ -1,0 +1,27 @@
+[
+    {
+      "_id": "1",
+      "courseName": "Introduction to Python",
+      "category": "Programming",
+      "teacher": "John Doe",
+      "imageUrl": "https://example.com/python.jpg",
+      "description": "Learn the basics of Python programming."
+    },
+    {
+      "_id": "2",
+      "courseName": "Advanced JavaScript",
+      "category": "Web Development",
+      "teacher": "Jane Smith",
+      "imageUrl": "https://example.com/javascript.jpg",
+      "description": "Master advanced concepts in JavaScript."
+    },
+    {
+      "_id": "3",
+      "courseName": "UI/UX Design",
+      "category": "Design",
+      "teacher": "Emily Johnson",
+      "imageUrl": "https://example.com/uxdesign.jpg",
+      "description": "Explore the principles of user interface and user experience design."
+    }
+  ]
+  
