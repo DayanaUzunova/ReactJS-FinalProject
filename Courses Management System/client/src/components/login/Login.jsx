@@ -4,15 +4,14 @@ export default function Login() {
             <form id="login">
 
                 <div className="container">
-                    <div className="brand-logo"></div>
                     <h1>Login</h1>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Sokka@gmail.com" />
-                    <label htmlFor="login-pass">Password:</label>
+                    <label className="inputs" htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Place your email here" />
+                    <label className="inputs" htmlFor="login-pass">Password:</label>
                     <input type="password" id="login-password" name="password" />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
-                        <span>If you don't have profile click <a href="/register">here</a></span>
+                        <span>If you don`t have a profile click<a href="/register">here</a></span>
                     </p>
                 </div>
             </form>
