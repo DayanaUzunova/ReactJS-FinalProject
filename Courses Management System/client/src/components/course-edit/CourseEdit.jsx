@@ -14,7 +14,7 @@ export default function CourseEdit() {
                     <label htmlFor="game-img">Image:</label>
                     <input type="text" id="imageUrl" name="imageUrl" value="" />
 
-                    <label htmlFor="teacherName">Name:</label>
+                    <label htmlFor="teacherName">Teacher Name:</label>
                     <input type="text" id="name" name="name" value="" />
 
                     <label htmlFor="description">Description:</label>
