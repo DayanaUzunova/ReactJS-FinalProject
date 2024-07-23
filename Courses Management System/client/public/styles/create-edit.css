@@ -1,22 +1,36 @@
 #create-page,
 #edit-page {
     position: relative;
-    width: 800px;
+    width: 750px;
     height: auto;
     border-radius: 20px;
-    padding: 40px;
+    padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    background: #3e4443;
-    box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
+    background: #696b6b;
+    box-shadow: 0px 0px 32px 0px #c9d1da, -14px -14px 20px #000103;
+    margin-top: 50px; 
+}
+
+#create-page h1 {
+    margin-top: 0px; 
+    color: whitesmoke
+}
+
+.inputs {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
 }
 
 input[type="text"] {
     background: #ecf0f3;
-    padding: 30px;
+    color: rgb(40, 38, 37);
+    padding: 20px;
     padding-left: 20px;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 25px;
     font-size: 24px;
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
@@ -32,7 +46,7 @@ textarea {
     border-bottom-color: #ecf0f3;
     background-color: #ecf0f3;
     border-right-color: #ecf0f3;
-    margin-top: 7px;
+    margin-top: 10px;
     color: black;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
