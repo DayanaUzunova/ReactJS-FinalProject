@@ -5,8 +5,9 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #3e4443;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    background: #696b6b;
+    box-shadow: 0px 0px 32px 0px #bdc2c8, -14px -14px 20px #191c21;
+    margin-top: 50px
 }
 
 #register-page {
@@ -16,30 +17,21 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #3e4443;
+    background: #696b6b;
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    margin-top: 50px;
 }
 
 .container {
-    padding: 40px;
-}
-
-.brand-logo {
-    height: 100px;
-    width: 100px;
-    background: url("../images/icon-gamepad-2.png");
-    margin: auto;
-    border-radius: 50%;
-    box-sizing: border-box;
-    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+    padding: 15px;
 }
 
 .container>h1 {
-    margin-top: 15px;
+    margin-top: 0px;
     font-weight: 900;
     font-size: 2.7rem;
     text-align: center;
-    color: white;
+    color: whitesmoke;
     letter-spacing: 1px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 17px;
@@ -96,7 +88,7 @@ label[for="terms"]>input {
 
 .btn.submit {
     margin-top: 30px;
-    background: #778e9c;
+    background: #696b6b;
     height: 60px;
     border-radius: 20px;
     color: white;
@@ -109,7 +101,7 @@ label[for="terms"]>input {
 
 .btn.submit:hover {
     color: white;
-    background-color: #8fa9b9;
+    background-color: #a9afb4;
 }
 
 .container {
@@ -124,7 +116,7 @@ label[for="terms"]>input {
     right: 8px;
     text-decoration: none;
     color: black;
-    background: rgb(235, 157, 142);
+    background: rgb(229, 179, 169);
     border-radius: 10px;
     padding: 5px;
 }
