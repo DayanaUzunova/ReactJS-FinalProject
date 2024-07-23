@@ -17,7 +17,6 @@ export default function CourseList() {
 
     return (
         <section id="catalog-page">
-            <h1>All Courses</h1>
             {courses.length > 0
                 ? courses.map(course => <CourseListItem key={course._id} {...course} />)
                 : <h3 className="no-articles">No courses yet</h3>
