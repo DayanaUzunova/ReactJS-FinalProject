@@ -5,19 +5,19 @@ export default function CourseCreate() {
                 <div className="container">
 
                     <h1>Create Course</h1>
-                    <label htmlFor="leg-title">Title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter game title..." />
+                    <label className="inputs" htmlFor="leg-title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Enter course name..." />
 
-                    <label htmlFor="category">Category:</label>
-                    <input type="text" id="category" name="category" placeholder="Enter game category..." />
+                    <label className="inputs" htmlFor="category">Category:</label>
+                    <input type="text" id="category" name="category" placeholder="Enter course category..." />
 
-                    <label htmlFor="game-img">Image:</label>
+                    <label className="inputs" htmlFor="game-img">Image:</label>
                     <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
 
-                    <label htmlFor="teacherName">Name:</label>
+                    <label className="inputs" htmlFor="teacherName">Teacher Name:</label>
                     <input type="text" id="name" name="name" value="" />
 
-                    <label htmlFor="description">Description:</label>
+                    <label className="inputs" htmlFor="description">Description:</label>
                     <textarea name="description" id="description"></textarea>
                     <input className="btn submit" type="submit" value="Create Course" />
                 </div>
