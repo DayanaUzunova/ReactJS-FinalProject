@@ -28,7 +28,7 @@ export default function Home() {
                 <h1>Latest Courses</h1>
                 {latestCourses.length > 0
                     ? latestCourses.map(course => <LatestCourse key={course._id} {...course} />)
-                    : <p className="no-articles">No courses yet</p>
+                    : <p className="no-courses">No courses yet</p>
                 }
             </div>
         </section>
