@@ -7,7 +7,7 @@ export default function Register() {
                     <h1>Register</h1>
 
                     <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="maria@email.com" />
+                    <input type="email" id="email" name="email" placeholder="Enter your email.." />
 
                     <label htmlFor="pass">Password:</label>
                     <input type="password" name="password" id="register-password" />
@@ -18,7 +18,7 @@ export default function Register() {
                     <input className="btn submit" type="submit" value="Register" />
 
                     <p className="field">
-                        <span>If you already have profile click <a href="/login">here</a></span>
+                        <span>If you already have profile click<a href="/login">here</a></span>
                     </p>
                 </div>
             </form>
