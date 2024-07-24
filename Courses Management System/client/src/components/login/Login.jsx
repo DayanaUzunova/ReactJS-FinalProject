@@ -6,7 +6,7 @@ export default function Login() {
                 <div className="container">
                     <h1>Login</h1>
                     <label className="inputs" htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Place your email here" />
+                    <input type="email" id="email" name="email" placeholder="Enter your email.." />
                     <label className="inputs" htmlFor="login-pass">Password:</label>
                     <input type="password" id="login-password" name="password" />
                     <input type="submit" className="btn submit" value="Login" />
