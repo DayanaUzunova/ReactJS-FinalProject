@@ -14,7 +14,9 @@ const getAll = async (courseId) => {
     return comments;
 }
 
-export default {
+const commentsAPI = {
     create,
     getAll
-};
+}
+
+export default commentsAPI;
