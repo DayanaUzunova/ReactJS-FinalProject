@@ -11,10 +11,12 @@ export const getAll = async () => {
 };
 
 export const getOne = (courseId) => request.get(`${BASE_URL}/${courseId}`);
+export const create = (coursesData) => request.post(`${BASE_URL}`, coursesData)
 
 const coursesAPI = {
     getAll,
-    getOne
+    getOne,
+    create
 };
 
 export default coursesAPI;
