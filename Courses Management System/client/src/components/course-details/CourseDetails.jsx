@@ -1,21 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import coursesAPI from '../../api/courses-api.js';
+import { useGetOneCourse } from '../../hooks/useCourses.js';
 import { useParams } from 'react-router-dom';
 import commentsApi from '../../api/comments-api.js';
 
 export default function CourseDetails() {
-    const [course, setCourse] = useState({});
+    const { courseId } = useParams();
+    const [course, setCourse] = useGetOneCourse(courseId);
     const [username, setUsername] = useState('');
     const [comment, setComment] = useState('');
-    const { courseId } = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const result = await coursesAPI.getOne(courseId);
-            setCourse(result);
-        })();
-    }, []);
 
     const commentSubmitHandler = async (e) => {
         e.preventDefault();
