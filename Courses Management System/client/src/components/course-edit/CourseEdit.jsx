@@ -14,9 +14,6 @@ export default function CourseEdit() {
                     <label htmlFor="game-img">Image:</label>
                     <input type="text" id="imageUrl" name="imageUrl" value="" />
 
-                    <label htmlFor="teacherName">Teacher Name:</label>
-                    <input type="text" id="name" name="name" value="" />
-
                     <label htmlFor="description">Description:</label>
                     <textarea name="description" id="description"></textarea>
                     <input className="btn submit" type="submit" value="Edit Course" />
