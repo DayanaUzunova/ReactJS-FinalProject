@@ -6,7 +6,6 @@ const initialValues = {
     title: '',
     category: '',
     imageUrl: '',
-    teacherName: '',
     description: ''
 }
 
@@ -42,9 +41,6 @@ export default function CourseCreate() {
 
                     <label className="inputs" htmlFor="course-img">Image:</label>
                     <input type="text" id="imageUrl" name="imageUrl" value={values.imageUrl} onChange={changeHandler} placeholder="Upload a photo..." />
-
-                    <label className="inputs" htmlFor="teacherName">Teacher Name:</label>
-                    <input type="text" id="name" name="name" value={values.teacherName} onChange={changeHandler} />
 
                     <label className="inputs" htmlFor="description">Description:</label>
                     <textarea name="description" value={values.description} onChange={changeHandler} id="description"></textarea>
