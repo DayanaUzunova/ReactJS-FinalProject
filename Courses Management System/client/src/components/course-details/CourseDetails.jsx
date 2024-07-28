@@ -1,32 +1,36 @@
-import { useState } from 'react';
-
-import { useGetOneCourse } from '../../hooks/useCourses.js';
 import { useParams } from 'react-router-dom';
-import commentsApi from '../../api/comments-api.js';
+import { useGetOneCourse } from '../../hooks/useCourses.js';
+import { useForm } from '../../hooks/useForm.js';
+import { useGetAllComments, useCreateComment } from '../../hooks/useComments.js';
+import { useAuthContext } from '../../contexts/AuthContext.jsx';
+
+const initialValues = {
+    comment: ''
+};
 
 export default function CourseDetails() {
     const { courseId } = useParams();
-    const [course, setCourse] = useGetOneCourse(courseId);
-    const [username, setUsername] = useState('');
-    const [comment, setComment] = useState('');
+    const [comments, dispatch] = useGetAllComments(courseId);
+    const createComment = useCreateComment();
+    const { email, userId } = useAuthContext();
+    const [course] = useGetOneCourse(courseId);
+    const { isAuthenticated } = useAuthContext();
+    const {
+        changeHandler,
+        submitHandler,
+        values
+    } = useForm(initialValues, async ({ comment }) => {
+        try {
+            const newComment = await createComment(courseId, comment);
 
-    const commentSubmitHandler = async (e) => {
-        e.preventDefault();
+            // setComments(oldComments => [...oldComments, newComment]);
+            dispatch({ type: 'ADD_COMMENT', payload: { ...newComment, author: { email } } });
+        } catch (err) {
+            console.log(err.message);
+        }
+    });
 
-        const newComment = await commentsApi.create(courseId, username, comment);
-
-        // TODO: this should be refactored
-        setCourse(prevState => ({
-            ...prevState,
-            comments: {
-                ...prevState.comments,
-                [newComment._id]: newComment
-            }
-        }));
-
-        setUsername('');
-        setComment('');
-    }
+    const isOwner = userId == course._ownerId;
 
     return (
         <section id="course-details">
@@ -39,55 +43,49 @@ export default function CourseDetails() {
                     <p className="type">{course.category}</p>
                 </div>
 
-                <p className="text">{course.summary}</p>
+                <p className="text">{course.description}</p>
 
                 {/* <!-- Bonus ( for Guests and Users ) --> */}
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {Object.keys(course.comments || {}).length > 0
-                            ? Object.values(course.comments).map(comment => (
-                                <li key={comment._id} className="comment">
-                                    <p>{comment.username}: {comment.text}</p>
-                                </li>
-                            ))
-                            : <p className="no-comment">No comments.</p>
+                        {comments.map(comment => (
+                            <li key={comment._id} className="comment">
+                                <p>{comment.author.email}: {comment.text}</p>
+                            </li>
+                        ))
                         }
                     </ul>
 
+                    {comments.length == 0 && <p className="no-comment">No comments.</p>}
                 </div>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-                {/* <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div> */}
+                {isOwner && (
+                    <div className="buttons">
+                        <a href="#" className="button">Edit</a>
+                        <a href="#" className="button">Delete</a>
+                    </div>
+                )}
             </div>
 
             {/* <!-- Bonus --> */}
             {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form" onSubmit={commentSubmitHandler}>
-                    <input
-                        type="text"
-                        placeholder='Pesho'
-                        name='username'
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                    />
+            {isAuthenticated && (
+                <article className="create-comment">
+                    <label>Add new comment:</label>
+                    <form className="form" onSubmit={submitHandler}>
+                        <textarea
+                            name="comment"
+                            placeholder="Comment......"
+                            onChange={changeHandler}
+                            value={values.comment}
+                        ></textarea>
 
-                    <textarea
-                        name="comment"
-                        placeholder="Comment......"
-                        onChange={(e) => setComment(e.target.value)}
-                        value={comment}
-                    ></textarea>
-
-                    <input className="btn submit" type="submit" value="Add Comment" />
-                </form>
-            </article>
-
+                        <input className="btn submit" type="submit" value="Add Comment" />
+                    </form>
+                </article>
+            )}
         </section>
     );
 }
