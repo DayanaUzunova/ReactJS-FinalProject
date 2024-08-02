@@ -32,7 +32,7 @@ export default function CourseDetails() {
 
     const isOwner = userId == course._ownerId;
 
-return (
+    return (
         <section id="course-details">
             <h1>Course Details</h1>
             <div className="info-section">
@@ -45,7 +45,7 @@ return (
 
                 <p className="text">{course.description}</p>
 
-                {/* <!-- Bonus ( for Guests and Users ) --> */}
+                {/* <!-- Comments Section (visible to all users) --> */}
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
@@ -53,14 +53,12 @@ return (
                             <li key={comment._id} className="comment">
                                 <p>{comment.author.email}: {comment.text}</p>
                             </li>
-                        ))
-                        }
+                        ))}
                     </ul>
-
                     {comments.length == 0 && <p className="no-comment">No comments.</p>}
                 </div>
 
-                {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
+                {/* <!-- Edit/Delete buttons (Only for course owner) --> */}
                 {isOwner && (
                     <div className="buttons">
                         <a href="#" className="button">Edit</a>
@@ -69,9 +67,8 @@ return (
                 )}
             </div>
 
-            {/* <!-- Bonus --> */}
-            {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-            {isAuthenticated && (
+            {/* <!-- Add Comment Section (only for authenticated users who are not the course owner) --> */}
+            {isAuthenticated && !isOwner && (
                 <article className="create-comment">
                     <label>Add new comment:</label>
                     <form className="form" onSubmit={submitHandler}>
