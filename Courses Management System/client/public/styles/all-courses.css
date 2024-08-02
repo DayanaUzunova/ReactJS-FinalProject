@@ -9,7 +9,7 @@
 }
 
 #catalog-page>h1 {
-    color: #fff;
+    color: #ffffff;
     font-family: "Agency FB";
     font-size: 48px;
     font-weight: 700;
@@ -18,8 +18,8 @@
     text-align: center;
 }
 
-.allGames {
-    background-color: #fff;
+.allCourses {
+    background-color: #cdc7c7;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -31,13 +31,13 @@
     height: auto;
 }
 
-.allGames-info {
+.allCourses-info {
     padding: 30px;
     position: relative;
     width: 100%;
 }
 
-.allGames-info>img {
+.allCourses-info>img {
     margin-top: -10px;
     border-radius: 50%;
     height: 140px;
@@ -49,21 +49,21 @@
     width: 140px;
 }
 
-.allGames-info>h6 {
+.allCourses-info>h6 {
     font-size: 20px;
     font-weight: 750;
-    color: #161618;
+    color: #424242;
 }
 
-.allGames-info>h2 {
+.allCourses-info>h2 {
     font-size: 20px;
     font-weight: 750;
-    color: #161618;
+    color: #424242;
 }
 
 .details-button {
-    background-color: #2A265F;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: #666569;
+    box-shadow: 0 10px 10px rgba(99, 43, 43, 0.027);
     color: #fff;
     font-size: 20px;
     position: absolute;
