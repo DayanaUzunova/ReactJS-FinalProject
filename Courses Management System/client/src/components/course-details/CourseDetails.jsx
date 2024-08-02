@@ -32,7 +32,7 @@ export default function CourseDetails() {
 
     const isOwner = userId == course._ownerId;
 
-    return (
+return (
         <section id="course-details">
             <h1>Course Details</h1>
             <div className="info-section">
