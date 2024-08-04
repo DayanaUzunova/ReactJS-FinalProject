@@ -7,6 +7,7 @@
     position: relative;
     box-sizing: border-box;
     text-align: center;
+    flex-grow: 1
 }
 
 #welcome-world .welcome-message {
@@ -179,5 +180,6 @@
     font-weight: 700;
     font-size: 60px;
     font-family: "Agency FB";
-    margin-top: 210px;
+    margin-top: 100px;
+    margin-bottom: 185px;
 }
