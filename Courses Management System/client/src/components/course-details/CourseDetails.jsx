@@ -1,14 +1,16 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useGetOneCourse } from '../../hooks/useCourses.js';
 import { useForm } from '../../hooks/useForm.js';
 import { useGetAllComments, useCreateComment } from '../../hooks/useComments.js';
 import { useAuthContext } from '../../contexts/AuthContext.jsx';
+import coursesAPI from '../../api/courses-api.js';
 
 const initialValues = {
     comment: ''
 };
 
 export default function CourseDetails() {
+    const navigate = useNavigate();
     const { courseId } = useParams();
     const [comments, dispatch] = useGetAllComments(courseId);
     const createComment = useCreateComment();
@@ -30,7 +32,23 @@ export default function CourseDetails() {
         }
     });
 
-    const isOwner = userId == course._ownerId;
+    const courseDeleteHandler = async () => {
+        const isConfirmed = confirm(`Are you sure you want to delete ${course.title} course?`);
+       
+        if(!isConfirmed){
+            return;
+        }
+
+        try{
+            await coursesAPI.remove(courseId);
+            navigate('/');
+        } catch(err){
+            console.log(err.message);
+            
+        }
+    }
+
+    const isOwner = userId === course._ownerId;
 
     return (
         <section id="course-details">
@@ -61,8 +79,8 @@ export default function CourseDetails() {
                 {/* <!-- Edit/Delete buttons (Only for course owner) --> */}
                 {isOwner && (
                     <div className="buttons">
-                        <a href="#" className="button">Edit</a>
-                        <a href="#" className="button">Delete</a>
+                         <Link to={`/games/${courseId}/edit`} className="button">Edit</Link>
+                        <a href="#" onClick={courseDeleteHandler} className="button">Delete</a>
                     </div>
                 )}
             </div>
