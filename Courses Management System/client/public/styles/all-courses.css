@@ -18,6 +18,16 @@
     text-align: center;
 }
 
+#catalog-page>h2 {
+    color: #ffffff;
+    font-family: "Agency FB";
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .allCourses {
     background-color: #cdc7c7;
     border-radius: 10px;
@@ -29,6 +39,7 @@
     width: 600px auto;
     min-height: 210px;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .allCourses-info {
@@ -50,13 +61,13 @@
 }
 
 .allCourses-info>h6 {
-    font-size: 20px;
-    font-weight: 750;
+    font-size: 18px;
+    font-weight: 580;
     color: #424242;
 }
 
 .allCourses-info>h2 {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 750;
     color: #424242;
 }
