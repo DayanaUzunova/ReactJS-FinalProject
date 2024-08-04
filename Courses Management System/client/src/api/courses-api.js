@@ -12,11 +12,15 @@ export const getAll = async () => {
 
 export const getOne = (courseId) => request.get(`${BASE_URL}/${courseId}`);
 export const create = (coursesData) => request.post(`${BASE_URL}`, coursesData)
+export const remove = (courseId) => request.del(`${BASE_URL}/${courseId}`);
+export const update = (courseId, coursesData) => request.put(`${BASE_URL}/${courseId}`, coursesData);
 
 const coursesAPI = {
     getAll,
     getOne,
-    create
+    create,
+    remove,
+    update
 };
 
 export default coursesAPI;
