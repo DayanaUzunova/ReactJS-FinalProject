@@ -79,7 +79,7 @@ export default function CourseDetails() {
                 {/* <!-- Edit/Delete buttons (Only for course owner) --> */}
                 {isOwner && (
                     <div className="buttons">
-                         <Link to={`/games/${courseId}/edit`} className="button">Edit</Link>
+                         <Link to={`/courses/${courseId}/edit`} className="button">Edit</Link>
                         <a href="#" onClick={courseDeleteHandler} className="button">Delete</a>
                     </div>
                 )}
