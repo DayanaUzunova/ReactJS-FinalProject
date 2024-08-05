@@ -13,14 +13,14 @@ const initialValues = {
 export default function CourseEdit() {
     const navigate = useNavigate();
     const { courseId } = useParams();
-    const [course, setGame] = useGetOneCourse(courseId);
+    const [course, setCourse] = useGetOneCourse(courseId);
     const { 
         changeHandler,
         submitHandler,
         values
     } = useForm(Object.assign(initialValues, course), async (values) => {
         const updatedCourse = await coursesAPI.update(courseId, values);
-        setGame(updatedCourse);
+        setCourse(updatedCourse);
         navigate(`/courses/${courseId}/details`);
     });
 
