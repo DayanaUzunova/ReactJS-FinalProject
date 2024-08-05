@@ -13,6 +13,7 @@ import Footer from './components/footer/Footer.jsx';
 import Search from './components/search/Search.jsx';
 import NotFoundPage from './components/404/NotFound.jsx';
 import RouteGuard from './components/common/RouteGuard.jsx';
+import GuestRouteGuard from './components/common/GuestRouteGuard.jsx';
 
 function App() {
     return (
@@ -23,8 +24,10 @@ function App() {
                 <main id="main-content">
                     <Routes>
                         <Route path='/' element={<Home />} />
+                        <Route element={<GuestRouteGuard />}>
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<Register />} />
+                        </Route>
                         <Route element={<RouteGuard />}>
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/courses/:courseId/edit' element={<CourseEdit />} />
