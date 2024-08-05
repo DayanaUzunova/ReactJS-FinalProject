@@ -11,6 +11,8 @@ import CourseDetails from './components/course-details/CourseDetails.jsx';
 import CourseEdit from './components/course-edit/CourseEdit.jsx'
 import Footer from './components/footer/Footer.jsx';
 import Search from './components/search/Search.jsx';
+import NotFoundPage from './components/404/NotFound.jsx';
+import RouteGuard from './components/common/RouteGuard.jsx';
 
 function App() {
     return (
@@ -23,12 +25,15 @@ function App() {
                         <Route path='/' element={<Home />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<Register />} />
+                        <Route element={<RouteGuard />}>
                         <Route path='/logout' element={<Logout />} />
-                        <Route path='/courses' element={<CourseList />} />
+                        <Route path='/courses/:courseId/edit' element={<CourseEdit />} />
+                        <Route path='/courses/create' element={<CourseCreate />} />
+                      </Route>  
+                      <Route path='/courses' element={<CourseList />} />
                         <Route path='/search' element={<Search />} />
                         <Route path='/courses/:courseId/details' element={<CourseDetails />} />
-                        <Route path='/games/:courseId/edit' element={<CourseEdit />} />
-                        <Route path='/courses/create' element={<CourseCreate />} />
+                        <Route path='*' element={<NotFoundPage />} />
                     </Routes>
                 </main>
                 <Footer />
