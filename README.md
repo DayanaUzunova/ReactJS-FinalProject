@@ -17,13 +17,17 @@ git clone https://github.com/DayanaUzunova/ReactJS-FinalProject.git
 cd .
 
 ##To start the server:
+```bash
 ctrl + shift + ` - to open terminal (1st terminal)
 cd server
 node server.js
+```
 
+```bash
 To run the client (in new terminal):
 ctrl + shift + ` - to open terminal (2nd terminal)
 cd client
 npm i (installing dependencies)
 npm run dev (start the project)
+```
 follow the terminal link to open the project :)
