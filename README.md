@@ -6,8 +6,6 @@ My project is about creating a dynamic online platform called Courses Management
 ## Installation and Setup:
 Follow these instructions to get the project up and running on your local machine.
 
-## Prerequisites:
-
 ## Ensure you have the following installed:
 ```bash
 Node.js
