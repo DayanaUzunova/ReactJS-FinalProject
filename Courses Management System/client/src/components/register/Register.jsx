@@ -11,13 +11,24 @@ export default function Register() {
     const navigate = useNavigate();
 
     const registerHandler = async (values) => {
-        if (values.password != values['confirm-password']) {
-            return setError('Password missmatch!');
+        const email = values.email.trim();
+        const password = values.password.trim();
+        const confirmPassword = values['confirm-password'].trim();
+
+        if (password.length < 6 || confirmPassword.length < 6) {
+            return setError('Password must be at least 6 characters long!');
+        }
+
+        if (/\s/.test(password) || /\s/.test(confirmPassword)) {
+            return setError('Password cannot contain spaces!');
+        }
+
+        if (password !== confirmPassword) {
+            return setError('Passwords do not match!');
         }
 
         try {
-            await register(values.email, values.password);
-
+            await register(email, password);
             navigate('/');
         } catch (err) {
             setError(err.message);
@@ -41,6 +52,7 @@ export default function Register() {
                         value={values.email}
                         onChange={changeHandler}
                         placeholder="Enter your email here.."
+                        required
                     />
 
                     <label htmlFor="pass">Password:</label>
@@ -50,6 +62,8 @@ export default function Register() {
                         id="register-password"
                         value={values.password}
                         onChange={changeHandler}
+                        placeholder="Enter your password here.."
+                        required
                     />
 
                     <label htmlFor="con-pass">Confirm Password:</label>
@@ -59,6 +73,8 @@ export default function Register() {
                         id="confirm-password"
                         value={values['confirm-password']}
                         onChange={changeHandler}
+                        placeholder="Confirm your password here.."
+                        required
                     />
 
                     {error && (
